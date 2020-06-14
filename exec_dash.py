@@ -1,19 +1,18 @@
 # dashboard_generator.py
 
 print("-----------------------")
-print("MONTH: March 2018")
+print("MONTH: April 2018")
 
 print("-----------------------")
 print("CRUNCHING THE DATA...")
 
 print("-----------------------")
-print("TOTAL MONTHLY SALES: $12,000.71")
+print("PLEASE BE PATIENT")
 
 print("-----------------------")
-print("TOP SELLING PRODUCTS:")
-print("  1) Button-Down Shirt: $6,960.35")
-print("  2) Super Soft Hoodie: $1,875.00")
-print("  3) etc.")
+print("THIS WILL SHOW TOP SELLING PRODUCTS")
+print(" IF YOU GET AN ERROR TRY YOUR CSV FILE")
+
 
 print("-----------------------")
 print("VISUALIZING THE DATA...")
@@ -30,12 +29,10 @@ url = 'https://raw.githubusercontent.com/dsw333/exec-dash/master/sales-201904.cs
 df = pd.read_csv(url, error_bad_lines=False)
 import plotly.express as px
 #df = pd.read_csv("sales-201904.csv")
-fig = px.bar(df, x = 'sales price', y = 'product', orientation = 'h', title = "Top Selling Products April 19")
-
+fig = px.bar(df, x = 'sales price', y = 'product', labels = {'sales price':'Sales (USD)'} , orientation = 'h', title = "Top Selling Products April 19")
+fig.update_traces(texttemplate = 'sales price', textposition = 'outside')
 fig.show()
 
 
-#Make horizontal
-#Add title
-#Capitalize axis
+
 #Include Total Amount
