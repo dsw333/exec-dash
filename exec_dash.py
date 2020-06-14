@@ -23,9 +23,13 @@ print("TOTAL MONTHLY SALES: $" + str(df['sales price'].sum()))
 
 print("-----------------------")
 print("TOP SELLING PRODUCTS:")
-print("  1) Button-Down Shirt: $6,960.35")
-print("  2) Super Soft Hoodie: $1,875.00")
-print("  3) etc.")
+
+product_groups = df.groupby("product")
+
+# Apply the "mean" function to the weight column
+print(str(product_groups['sales price'].sum()))
+
+
 
 print("-----------------------")
 
