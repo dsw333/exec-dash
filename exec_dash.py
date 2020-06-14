@@ -30,11 +30,12 @@ url = 'https://raw.githubusercontent.com/dsw333/exec-dash/master/sales-201904.cs
 df = pd.read_csv(url, error_bad_lines=False)
 import plotly.express as px
 #df = pd.read_csv("sales-201904.csv")
-fig = px.bar(df, x = 'product', y = 'sales price')
+fig = px.bar(df, x = 'sales price', y = 'product', orientation = 'h', title = "Top Selling Products April 19")
+
 fig.show()
 
 
 #Make horizontal
 #Add title
 #Capitalize axis
-#Include Total Amunt
+#Include Total Amount
